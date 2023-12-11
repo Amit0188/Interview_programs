@@ -1,0 +1,113 @@
+ques1. Given an array of integers, write a Java program to find and print all the duplicate elements.
+package apnacollege;
+
+public class Array_duplicate {
+
+	public static void main(String[] args) {
+
+		int[] arr = { 10, 30, 56, 87, 98, 76, 56, 85, 28, 76, 88 };
+
+		System.out.println("the duplicate elements are : ");
+
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = i + 1; j < arr.length; j++) {
+
+				if ((arr[i] == arr[j]) && (i != j)) {
+
+					System.out.println(arr[i]);
+				}
+			}
+		}
+	}
+
+}
+
+Output :-
+the duplicate elements are : 
+56
+76
+
+
+ques 2:  Write a Java function to check if two strings are anagrams of each other.
+package apnacollege;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Anagrams {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter first word");
+		String str1 = sc.next();
+		System.out.println("Enter second word");
+		String str2 = sc.next();
+		
+		str1 = str1.toLowerCase();
+		str2 = str2.toLowerCase();
+		
+		if(str1.length() == str2.length()) {
+			
+			char[] charArray1 = str1.toCharArray();
+			char[] charArray2 = str2.toCharArray();
+			
+			Arrays.sort(charArray1);
+			Arrays.sort(charArray2);
+			
+			boolean result = Arrays.equals(charArray1, charArray2);
+			
+			if(result = true ) {
+				System.out.println(str1 + " and "+ str2 +" are anagram.");
+			}else {
+				System.out.println(str1 +" and "+ str2 +" Are not anagram.");
+				
+			}
+		}else {
+			System.out.println(str1 +" and "+ str2 +" Are not anagram.");
+		}
+		
+	}
+
+}
+
+output:
+Enter first word
+silent
+Enter second word
+listen
+silent and listen are anagram.
+
+
+
+ques 3: Write a Java program to print a right-angled triangle of stars. The number of rows should be taken as input.
+
+package apnacollege;
+
+import java.util.Scanner;
+
+public class Rightangledstar {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of rows you want");
+		int n = sc.nextInt();
+		
+		for(int i=1;i<=n;i++) {
+			for (int j=1;j<=i;j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		sc.close();
+
+output:
+Enter the number of rows you want
+5
+*
+**
+***
+****
+*****
+
